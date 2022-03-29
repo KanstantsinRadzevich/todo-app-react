@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #4a6aaa;
+}
+
+.app {
+  text-align: center;
+}
+
+.app-header {
+  min-height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(px + 2vmin);
+  color: white;
+}
+
+input {
+  border: #392769 solid 1px;
+  border-radius: 5px;
+  height: 25px;
+  width: 200px;
+  padding: 5px;
+  font-size: 14px;
+  color: #392769;
+  background-color: white;
+  
+  
+}
+.main-content {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border: 1px gray double;
+}
+
+span {
+  color: #000000;
+  margin: 10px 0;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+.active-tasks-head {
+  background-color: #eedf0a;
+  font-weight: 600;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  margin: 0;
+  color: #000000;
+}
+
+
+.active-tasks {
+  background-color: #eedf0a;
+  height: 50vh;
+  width: 25vw;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: blue;
+
+  
+}
+
+.done-tasks {
+  background-color: #14a558;
+  min-height: 50vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.failed-tasks {
+  background-color: #c84929;
+  min-height: 50vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.add-task {
+  display: flex;
+  justify-content: space-around;
+  min-width: 65vw;
+  font-size: large;
+}
+.add-task input {
+  min-width: 80%;
+  font-size: large;
+}
+
+.add-task button {
+  background-color: #9ba514;
+  border: 1px gray double;
+  border-radius: 5px;
+  font-size: large;
+}
+
+.add-task button:hover {
+  transform: translateY(-1px);
+  box-shadow: #aa4a4a;
+  background-color: #4aaa52;
+}
+
+main div {
+  border: #353434 2px solid;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  border: 1px gray double;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  list-style: none;
+  align-items: center;
+}
+
+li:hover {
+  background-color: #4aaa52;
+  color: white;
+}
+li button {
+  background-color: #9ba514;
+  border: 1px gray double;
+  border-radius: 5px;
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  cursor: pointer;
+  margin: 5px;
+  height: 25px;
+}
+
+li button:hover {
+  transform: translateY(-1px);
+  box-shadow: #aa4a4a;
+  background-color: #392769;
+  color: #eedf0a;
+}
+
+
+ul {
+  padding: 0;
+  margin: 0;
+}
