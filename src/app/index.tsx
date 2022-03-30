@@ -10,6 +10,8 @@ function App() {
   
   const [appState, setAppState] = useState([]);
   const addTask = (task) => setAppState(prev => [...prev, task]);
+
+  const deleteTask = (task) => setAppState(prev => prev.filter(t => t !== task));
   
   return (
     <div className="app">
@@ -19,11 +21,12 @@ function App() {
         </h1>
         <h3>Now: {new Date().toLocaleTimeString()}.</h3>
         <section className='add-task'>
-            <AddTask onAdd={addTask} />
+            <AddTask onAdd={addTask} onDel={deleteTask}/>
         </section>
       </header>
       <main className='main-content'>
         <ActiveTasks allTasks={appState}/>
+        
         <section className='done-tasks'>
           <div>
             Done-tasks
@@ -40,3 +43,4 @@ function App() {
 }
 
 export default App;
+

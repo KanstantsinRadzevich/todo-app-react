@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #4a6aaa;
+  background: linear-gradient(pink,10vw,blue,green);
+  height: 100vh;
 }
 
 .app {
@@ -23,7 +24,7 @@ input {
   border: #392769 solid 1px;
   border-radius: 5px;
   height: 25px;
-  width: 200px;
+  width: 400px;
   padding: 5px;
   font-size: 14px;
   color: #392769;
@@ -117,7 +118,7 @@ span {
 }
 
 main div {
-  border: #353434 2px solid;
+  border: #353434 1px solid;
 }
 
 li {
@@ -132,6 +133,13 @@ li {
   font-style: italic;
   list-style: none;
   align-items: center;
+  
+}
+
+li > p {
+  margin-right: 10px;
+  white-space: pre-line;
+  text-align: left;
 }
 
 li:hover {
@@ -157,6 +165,10 @@ li button:hover {
   color: #eedf0a;
 }
 
+.li-drive-buttons {
+  display: flex;
+  flex-direction: column;
+}
 
 ul {
   padding: 0;
