@@ -1,31 +1,36 @@
 /**
  * npm install UUID модуль для генерации uuid
  */
+//@ts-nocheck
 
-import React from 'react'
-import { v4 as uuid4 } from 'uuid';
+import React from "react";
 
-interface ActiveTasksProps {allTasks: string[]}
-
+interface ActiveTasksProps {
+    allTasks: {title: string, id: string}[];
+    onCompleted: any;
+    onDelete: any;
+}
 class ActiveTasks extends React.Component<ActiveTasksProps> {
-    
     render() {
         return (
-            <section >
-                <div className='active-tasks-head'>
-                    Active-tasks
-                </div>
-                <ul id='activeTasks' className='active-tasks'>
-                    {this.props.allTasks?this.props.allTasks.map(val => {
-                        return  <li key={uuid4()}>
-                                    <p>{val}</p>
-                                    <div className='li-drive-buttons'>
-                                        <button>completed</button>
-                                        <button >delete</button>
-                                    </div> 
-                                    
+            <section>
+                <div className="active-tasks-head">Active-tasks</div>
+                <ul id="activeTasks" className="active-tasks">
+                    {this.props.allTasks ? (
+                        this.props.allTasks.map(task => {
+                            return (
+                                <li key={task.id}>
+                                    <p>{task.title}</p>
+                                    <div className="li-drive-buttons">
+                                        <button onClick={() => this.props.onCompleted(task.id)}>completed</button>
+                                        <button onClick={() => this.props.onDelete(task.id)}>delete</button>
+                                    </div>
                                 </li>
-                            }):<p>no tasks</p>}
+                            );
+                        })
+                    ) : (
+                        <p>no tasks</p>
+                    )}
                 </ul>
             </section>
         );

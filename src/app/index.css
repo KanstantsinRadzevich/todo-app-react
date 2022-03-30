@@ -83,7 +83,7 @@ span {
   color: white;
 }
 
-.failed-tasks {
+.completed-tasks {
   background-color: #c84929;
   min-height: 50vh;
   width: 25vw;
