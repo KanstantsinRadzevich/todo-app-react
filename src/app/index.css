@@ -42,16 +42,8 @@ input {
   border: 1px gray double;
 }
 
-span {
-  color: #000000;
-  margin: 10px 0;
-  font-weight: 600;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-style: italic;
-}
-
-.active-tasks-head {
-  background-color: #eedf0a;
+.tasks-head {
+  background-color: #21ee0a;
   font-weight: 600;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
@@ -69,24 +61,33 @@ span {
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: blue;
-
-  
 }
 
-.done-tasks {
+.completed-tasks {
   background-color: #14a558;
-  min-height: 50vh;
+  height: 50vh;
   width: 25vw;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.completed-tasks {
+.time-completed {
+  width: 80px;
+  color: #1f1f57;
+  padding: 5px 0;
+  font-size: 0.7rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: none;
+}
+
+.failed-tasks {
   background-color: #c84929;
-  min-height: 50vh;
+  height: 50vh;
   width: 25vw;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
@@ -95,8 +96,11 @@ span {
 
 .add-task {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   min-width: 65vw;
+  height: 120px;
   font-size: large;
 }
 .add-task input {
@@ -109,16 +113,19 @@ span {
   border: 1px gray double;
   border-radius: 5px;
   font-size: large;
+  width: 120px;
+  height: 40px;
+  box-shadow: 5px 5px 5px rgb(39, 10, 93);
 }
 
 .add-task button:hover {
   transform: translateY(-1px);
   box-shadow: #aa4a4a;
-  background-color: #4aaa52;
+  background-color: #21ee0a;
 }
 
-main div {
-  border: #353434 1px solid;
+.up-button-text {
+  height: 40px;
 }
 
 li {
@@ -146,7 +153,7 @@ li:hover {
   background-color: #4aaa52;
   color: white;
 }
-li button {
+li  button {
   background-color: #9ba514;
   border: 1px gray double;
   border-radius: 5px;

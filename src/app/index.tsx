@@ -1,47 +1,18 @@
-import React, { useState } from 'react';
+import { useContext } from 'react';
 import './index.css';
-import AddTask from '../components/addTask/index';
-import ActiveTasks from '../components/activeTasks';
-import { v4 as uuid4 } from 'uuid';
- 
+import { ThemeContext } from '../common/theme/context';
+import TaskManager from '../components/taskManager';
+import { darkTheme, lightTheme } from '../common/theme';
+
+
 
 function App() {
-  const [appState, setAppState] = useState<{allTasks: {title: string; id: string}[], completedTasks: {title: string; id: string}[]}>({allTasks: [], completedTasks: []});
-  
-  const addTask = (task: string) => setAppState((prev) => ({...prev, allTasks:[...prev.allTasks, {title: task, id: uuid4()}]}));
-
-  const handlerCompleted = (task: string) => {
-    console.log(task);
-  };
-  const handlerDelete = (task: string) => {
-    console.log(task);
-  };
-
+  const { mode, handleToggle } = useContext(ThemeContext)
+  const currentTheme = mode === 'light'? lightTheme : darkTheme; 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>My Tasks</h1>
-        <h3>Now: {new Date().toLocaleTimeString()}.</h3>
-        <section className="add-task">
-          <AddTask onAdd={addTask} />
-        </section>
-      </header>
-      <main className="main-content">
-        <ActiveTasks
-          allTasks={appState.allTasks}
-          onCompleted={handlerCompleted}
-          onDelete={handlerDelete}
-        />
-
-        <section className="done-tasks">
-          <div>Done-tasks</div>
-          <div id="DoneTasks"></div>
-        </section>
-        <section className="completed-tasks">
-          <div>Completed-tasks</div>
-          <div id="completedTasks"></div>
-        </section>
-      </main>
+      <button style= {{backgroundColor: currentTheme.palette.primary.main }} onClick={handleToggle}>Change theme</button>
+      <TaskManager />
     </div>
   );
 }
